@@ -42,6 +42,9 @@ Below are the machine learning models used for this project
 - co_XGBreg_model (XGBoost Regressor model)
 - model (LSTM model). Not included because of file size.
 
+![Temperature TS Forecast](https://user-images.githubusercontent.com/112252681/188776041-24f7c266-678a-4d62-af49-8d3d754bc9f8.png)
+
+
 ## Acknowledgements
 Saverio De Vito (saverio.devito '@' enea.it), ENEA - National Agency for New Technologies, Energy and Sustainable Economic Development
 
