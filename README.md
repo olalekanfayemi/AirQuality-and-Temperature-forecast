@@ -1,57 +1,49 @@
-# AQI-Deployment
+# CO-AirQuality-Prediction-and-Temperature-forecast
 ## Aim :
-### In this project we will be building an Air Quality Index Predictor with the help of Machine Learning Models and Auto ML library i.e. TPOT
+### In this project we will be building a CO Predictor with the help of XGBest Models and Temoerature forecast with LSTM
 This repository contains code to predict the air quality based on the given parameters.
 
 ##Dataset
-Dataset of Bangalore city with the Air Quality Index information from the year 2013-2018. 
-- [Data](https://github.com/evon0101/Air-Quality-index-Prediction/blob/main/Data/city_hour.csv)
-The data was taken from the website: (https://en.tutiempo.ne
+- [Source](https://www.kaggle.com/datasets/fedesoriano/air-quality-data-set) Kaggle
+#### Context
+This dataset contains the responses of a gas multisensor device deployed on the field in an Italian city. Hourly responses averages are recorded along with gas concentrations references from a certified analyzer. This dataset was taken from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/index.php
 
 ### Feature abbreviation and meaning:
-- T	 = Average annual temperature
-- TM = Annual average maximum temperature
-- Tm = Average annual minimum temperature
-- SLP = Sea Level Pressure
-- H = Humidity
-- V	= Annual average wind speed
-- VM = Maximum wind speed
-- PM 5 : This is our Dependent variable i.e. our Air Quality Index
+- Date (DD/MM/YYYY)
+- Time (HH.MM.SS)
+- True hourly averaged concentration CO in mg/m^3 (reference analyzer)
+- PT08.S1 (tin oxide) hourly averaged sensor response (nominally CO targeted)
+- True hourly averaged overall Non Metanic HydroCarbons concentration in microg/m^3 (reference analyzer)
+- True hourly averaged Benzene concentration in microg/m^3 (reference analyzer)
+- PT08.S2 (titania) hourly averaged sensor response (nominally NMHC targeted)
+- True hourly averaged NOx concentration in ppb (reference analyzer)
+- PT08.S3 (tungsten oxide) hourly averaged sensor response (nominally NOx targeted)
+- True hourly averaged NO2 concentration in microg/m^3 (reference analyzer)
+- PT08.S4 (tungsten oxide) hourly averaged sensor response (nominally NO2 targeted)
+- PT08.S5 (indium oxide) hourly averaged sensor response (nominally O3 targeted)
+- Temperature in Â°C
+- Relative Humidity (%)
+- AH Absolute Humidity
 
 ## Time Line of the Project:
 - Data Analysis
 - Fearure Engineering
-- Model Building and Prediction using ML models
-- Model Building and Prediction using TPOT(Auto ML)
-- Deployment on Heroku
+- Model Building and Prediction using XGB Regressor  models
+- Model Building and Forecast using LSTM
+- Deployment ---
 
 ## Machine Learning Models:
 Below are the machine learning models used for this project
-- [Linear Regression]
 - [Xgboost Regressor]
-- [Random Forest Regress]
-- [TPOTRegressor]
+- [LSTM]
 
-## :gear: Project Demo
-- Application is hosted on Heroku. You can see the [demo](https://air-quality-index-aq1.herokuapp.com/)
+## Outputs
+- data_from_hours_2days (The average daily value for all selected features)
+- co_XGBreg_model (XGBoost Regressor model)
+- model (LSTM model). Not included because of file size.
 
-Deploy using CLI
-****
-Install the Heroku CLI
-Download and install the Heroku CLI.
+## Acknowledgements
+Saverio De Vito (saverio.devito '@' enea.it), ENEA - National Agency for New Technologies, Energy and Sustainable Economic Development
 
-If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
-
-$ heroku login
-Clone the repository
-Use Git to clone air-quality-index-aq1's source code to your local machine.
-
-$ heroku git:clone -a air-quality-index-aq1 
-$ cd air-quality-index-aq1
-Deploy your changes
-Make some changes to the code you just cloned and deploy them to Heroku using Git.
-
-$ git add .
-$ git commit -am "make it better"
-$ git push heroku master
-****
+## Citation Request
+S. De Vito, E. Massera, M. Piga, L. Martinotto, G. Di Francia, On field calibration of an electronic nose for benzene estimation in an urban pollution monitoring scenario, Sensors and Actuators B: Chemical, Volume 129, Issue 2, 22 February 2008, Pages 750-757, ISSN 0925-4005. (https://www.sciencedirect.com/science/article/abs/pii/S0925400507007691)
